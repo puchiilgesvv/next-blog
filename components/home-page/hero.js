@@ -7,7 +7,7 @@ function Hero() {
             <div className={classes.image}>
                 <Image src='/images/site/JacobJessie.jpg' alt='Cute Photo' width={300} height={300} />
             </div>
-            <h1>Jacob Jessie Blog</h1>
+            <h1>Jacob and Jessie</h1>
             <p>We are cute little dogs writing a blog :D</p>
         </section>
     )
