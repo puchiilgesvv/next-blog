@@ -11,7 +11,7 @@ function Hero() {
             <motion.div
                 initial={{ x: -350 }}
                 animate={{ x: 0 }}
-                transition={{ ease: "easeOut", duration: 0.7 }}>
+                transition={{ ease: "easeOut", duration: 0.7 , delay: 0.1}}>
                 <h1>Jacob and Jessie</h1>
             </motion.div>
             <p>We are cute little dogs writing a blog :D</p>
