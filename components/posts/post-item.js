@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import classes from "./post-item.module.css"
+import { motion } from "framer-motion"
 
 export default function PostItem(props) {
     const { title, image, excerpt, date, slug } = props.post
@@ -14,9 +15,17 @@ export default function PostItem(props) {
     const imagePath = `/images/posts/${image}`
     const linkPath = `/posts/${slug}`
 
+    const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1
+        }
+    }
+
     return (
         <>
-            <li className={classes.post}>
+            <motion.li className={classes.post} variants={item}>
                 <Link href={linkPath}>
                     <a>
                         <div className={classes.image}>
@@ -29,7 +38,7 @@ export default function PostItem(props) {
                         </div>
                     </a>
                 </Link>
-            </li>
+            </motion.li>
         </>
     )
 }
