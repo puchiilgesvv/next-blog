@@ -1,3 +1,4 @@
+import Animate from "../components/animations/animate"
 import FeaturedPosts from "../components/home-page/featured-posts"
 import Hero from "../components/home-page/hero"
 
@@ -27,10 +28,9 @@ export default function Home() {
   ]
 
   return (
-    <>
+    <Animate>
       <Hero />
       <FeaturedPosts posts={DUMMY_POSTS} />
-    </>
-
+    </Animate>
   )
 }

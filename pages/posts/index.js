@@ -1,3 +1,4 @@
+import Animate from "../../components/animations/animate";
 import AllPosts from "../../components/posts/all-posts";
 
 export default function PostPage() {
@@ -26,6 +27,8 @@ export default function PostPage() {
     ]
 
     return (
-        <AllPosts posts={DUMMY_POSTS} />
+        <Animate>
+            <AllPosts posts={DUMMY_POSTS} />
+        </Animate>
     )
 }
