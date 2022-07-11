@@ -1,6 +1,11 @@
+import Animate from "../../components/animations/animate"
+import PostContent from "../../components/posts/post-detail/post-content"
+
 function SinglePostPage() {
     return (
-        <p>Single Post Page</p>
+        <Animate>
+            <PostContent />
+        </Animate>
     )
 }
 
