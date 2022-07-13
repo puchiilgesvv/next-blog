@@ -1,34 +1,20 @@
 import Animate from "../../components/animations/animate";
 import AllPosts from "../../components/posts/all-posts";
+import { getAllPosts } from "../../lib/posts-util";
 
-export default function PostPage() {
-    const DUMMY_POSTS = [
-        {
-            slug: 'getting-started-with-next-js',
-            title: 'Getting Started with Next JS',
-            image: 'getting-started-nextjs.png',
-            excerpt: 'Next JS is the React framework for production.',
-            date: '2022-02-10'
-        },
-        {
-            slug: 'a-random-post',
-            title: 'This is a random post',
-            image: 'getting-started-nextjs.png',
-            excerpt: 'Next JS is amazing',
-            date: '2022-05-10'
-        },
-        {
-            slug: 'another-random-post',
-            title: 'This is another random post',
-            image: 'getting-started-nextjs.png',
-            excerpt: 'Next JS is ultra amazing!!!',
-            date: '2022-05-10'
-        }
-    ]
-
+export default function PostPage(props) {
     return (
         <Animate>
-            <AllPosts posts={DUMMY_POSTS} />
+            <AllPosts posts={props.posts} />
         </Animate>
     )
+}
+
+export async function getServerSideProps() {
+    const allPosts = getAllPosts()
+    return {
+        props: {
+            posts: allPosts
+        }
+    }
 }
