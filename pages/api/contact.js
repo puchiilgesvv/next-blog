@@ -24,7 +24,7 @@ export default async function handler(req, res) {
             return
         }
 
-        const db = client.db('blog')
+        const db = client.db(process.env.mongodb_database)
         try {
             const result = await db.collection('form').insertOne(newMessage)
             newMessage.id = result.insertedId
