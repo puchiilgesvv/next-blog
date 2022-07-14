@@ -1,12 +1,19 @@
+import Head from "next/head"
 import Animate from "../../components/animations/animate";
 import AllPosts from "../../components/posts/all-posts";
 import { getAllPosts } from "../../lib/posts-util";
 
 export default function PostPage(props) {
     return (
-        <Animate>
-            <AllPosts posts={props.posts} />
-        </Animate>
+        <>
+            <Head>
+                <title>Posts</title>
+                <meta name='description' content='A collection of my posts.' />
+            </Head>
+            <Animate>
+                <AllPosts posts={props.posts} />
+            </Animate>
+        </>
     )
 }
 

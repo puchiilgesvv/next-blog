@@ -1,12 +1,19 @@
+import Head from "next/head"
 import Animate from "../../components/animations/animate"
 import PostContent from "../../components/posts/post-detail/post-content"
 import { getPostData, getPostsFiles } from "../../lib/posts-util"
 
 function SinglePostPage(props) {
     return (
-        <Animate>
-            <PostContent post={props.post} />
-        </Animate>
+        <>
+            <Head>
+                <title>{props.post.title}</title>
+                <meta name='description' content={props.post.excerpt} />
+            </Head>
+            <Animate>
+                <PostContent post={props.post} />
+            </Animate>
+        </>
     )
 }
 
