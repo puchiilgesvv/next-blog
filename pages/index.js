@@ -8,7 +8,7 @@ export default function Home(props) {
   return (
     <>
     <Head>
-      <title>Jacob Jessie Blog</title>
+      <title>Google Blog</title>
       <meta name='description' content='Some SEO content description.'/>
     </Head>
     <Animate>
